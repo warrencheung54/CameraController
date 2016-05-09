@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CameraController</string>
+    <string name="delete">Delete</string>
+    <string name="captureMode">Capture Mode</string>
+    <string name="isoSpeedTitle">ISO Speed</string>
+    <string name="shutterSpeed">Shutter Speed</string>
+    <string name="aperture">Aperture</string>
+</resources>
