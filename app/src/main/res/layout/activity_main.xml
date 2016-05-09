@@ -10,7 +10,7 @@
     tools:context="com.example.warrencheung.wifitransfer.MainActivity">
 
 
-    <com.example.warrencheung.cameracontroller.ZoomableImageView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/imageView"
