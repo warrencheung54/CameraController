@@ -13,6 +13,7 @@ import java.text.ParseException;
 public class ExpSettings {
 
     private Context context;
+    public static Commands command;
 
     public ExpSettings(Context context){
         this.context = context;
@@ -28,7 +29,7 @@ public class ExpSettings {
                 dialog.dismiss();
                 String client_mac_fixed = new String(address).replace("99", "19");
                 String clientIP = Utils.getIPFromMac(client_mac_fixed);
-                ssh.sendCommand(USERNAME, PASSWORD, clientIP, PORT, "gphoto2 --set-config expprogram="+modes[which], new CallBack() {
+                ssh.sendCommand(USERNAME, PASSWORD, clientIP, PORT, command.setExpMode + modes[which], new CallBack() {
                             @Override
                             public void done(String returned) {
                             }
@@ -49,7 +50,7 @@ public class ExpSettings {
                 dialog.dismiss();
                 String client_mac_fixed = new String(address).replace("99", "19");
                 String clientIP = Utils.getIPFromMac(client_mac_fixed);
-                ssh.sendCommand(USERNAME, PASSWORD, clientIP, PORT, "gphoto2 --set-config iso=" + iso[which], new CallBack() {
+                ssh.sendCommand(USERNAME, PASSWORD, clientIP, PORT, command.setISO + iso[which], new CallBack() {
                     @Override
                     public void done(String returned) {
                     }
@@ -71,7 +72,7 @@ public class ExpSettings {
                 dialog.dismiss();
                 String client_mac_fixed = new String(address).replace("99", "19");
                 String clientIP = Utils.getIPFromMac(client_mac_fixed);
-                ssh.sendCommand(USERNAME, PASSWORD, clientIP, PORT, "gphoto2 --set-config shutterspeed=" + ss[which], new CallBack() {
+                ssh.sendCommand(USERNAME, PASSWORD, clientIP, PORT, command.setShutterSpeed + ss[which], new CallBack() {
                     @Override
                     public void done(String returned) {
                     }
@@ -95,7 +96,7 @@ public class ExpSettings {
                 String client_mac_fixed = new String(address).replace("99", "19");
                 String clientIP = Utils.getIPFromMac(client_mac_fixed);
 
-                ssh.sendCommand(USERNAME, PASSWORD, clientIP, PORT, "gphoto2 --set-config 5007=" + aperture[which], new CallBack() {
+                ssh.sendCommand(USERNAME, PASSWORD, clientIP, PORT, command.setAperture + aperture[which], new CallBack() {
                     @Override
                     public void done(String returned) {
                     }

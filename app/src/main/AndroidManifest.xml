@@ -23,7 +23,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Connect" />
-        <activity android:name=".Exposure"></activity>
     </application>
 
 </manifest>
